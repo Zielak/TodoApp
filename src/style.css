@@ -1,13 +1,35 @@
+.container{
+	margin-top: 2em;
+	
+	border-radius: 0.4em;
+	box-shadow: 0 0.2em 0.4em #666;
+}
+
+h1{
+	text-align: center;
+	margin: 1.4em 0 1.2em 0;
+}
+
+.task{
+    margin: 1em 0;
+}
+
+.task input[type="checkbox"]{
+    width: 1.5em;
+    height: 1.5em;
+}
+
+
 .done{
     opacity: 0.5;
 }
-.done:after {
-    content: ' ';
+.done div.text-input:after {
+    content: '';
     display: block;
     width: 100%;
     background: #adadad;
     height: 1px;
     position: relative;
-    top: -1em;
-    left: 1em;
+    top: -1.2em;
 }
+

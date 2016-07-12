@@ -3,22 +3,59 @@
 <head>
   <meta charset="utf-8">
   <title>TODO APP</title>
-  <link rel="stylesheet" href="_lib/bootstrap/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="style.css">
-  <script src="_lib/angular/angular.js"></script>
-  <script src="todo.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/angular.min.js"></script>
+  <script src="js/todo.js"></script>
 </head>
 <body ng-controller="todoController">
-  <h1>Today, you gotta do:</h1>
 
-  <ul>
-    <li ng-repeat="task in tasks">
-      <div ng-class="{'done': task.done}">
-        <input type="checkbox" name="" ng-model="task.done" ng-change="taskStatusChange(task)">
-        <input type="text" name="" ng-model="task.title">
+  <div class="container">
+
+    <h1>Today, you gotta do:</h1>
+
+    <div class="form-horizontal">
+      <div ng-repeat="task in tasks">
+
+        <div ng-class="{'done': task.done}" class="row task">
+
+          <div class="col-xs-2 col-sm-1 text-right">
+            <label>
+              <input type="checkbox" name="" ng-model="task.done" ng-change="taskStatusChange(task)">
+            </label>
+          </div>
+
+          <div class="col-xs-9 col-sm-10 text-input">
+            <input class="form-control" type="text" name="" ng-model="task.title">
+          </div>
+
+          <div class="col-xs-2 col-sm-1">
+            <button class="btn btn-danger" ng-click="removeTask(task)" type="submit">X</button>
+          </div>
+
+        </div>
+
       </div>
-    </li>
-  </ul>
+
+    </div>
+
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 ">
+          <div class="form-group">
+            <button class="btn btn-primary" ng-click="addNewTask()" type="submit">Add new task</button>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 text-right">
+          <div class="form-group">
+            <button class="btn btn-default" ng-click="clearTasks()" type="submit">Clear</button>
+            <button class="btn btn-default" ng-click="resetTasks()" type="submit">Reset</button>
+          </div>
+        </div>
+      </div>
+
+  </div>
 
 </body>
 </html>
