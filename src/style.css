@@ -1,0 +1,13 @@
+.done{
+    opacity: 0.5;
+}
+.done:after {
+    content: ' ';
+    display: block;
+    width: 100%;
+    background: #adadad;
+    height: 1px;
+    position: relative;
+    top: -1em;
+    left: 1em;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+<head>
+  <meta charset="utf-8">
+  <title>TODO APP</title>
+  <link rel="stylesheet" href="_lib/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css">
+  <script src="_lib/angular/angular.js"></script>
+  <script src="todo.js"></script>
+</head>
+<body ng-controller="todoController">
+  <h1>Today, you gotta do:</h1>
+
+  <ul>
+    <li ng-repeat="task in tasks">
+      <div ng-class="{'done': task.done}">
+        <input type="checkbox" name="" ng-model="task.done" ng-change="taskStatusChange(task)">
+        <input type="text" name="" ng-model="task.title">
+      </div>
+    </li>
+  </ul>
+
+</body>
+</html>
